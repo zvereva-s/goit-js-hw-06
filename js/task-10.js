@@ -23,30 +23,24 @@ inputEl.addEventListener('input', (event) => {
 }
 
 function createBoxes(amount) {
-  
-  const arrObj = [];
   const listBoxes = [];
-
-  for (let i = 0; i < amount; i += 1) {
-    const boxEl = document.createElement('div');
-    boxEl.classList.add('color-box')
-  arrObj.push({ boxEl });
-  }
-  arrObj.map((el) => el.boxEl.style.backgroundColor = getRandomHexColor());
 
   let width = 30;
   let height = 30;
 
-  arrObj.map(el => {
+  for (let i = 0; i < amount; i += 1) {
+    const boxEl = document.createElement('div');
+    boxEl.classList.add('color-box');
+    boxEl.style.backgroundColor = getRandomHexColor();
+
     width += 10;
     height += 10;
-    el.boxEl.style.width = width + 'px';
-    el.boxEl.style.height = height + 'px'
-  });
-  
-  for (const obj of arrObj) {
-    listBoxes.push(obj.boxEl)
+    boxEl.style.width = width + 'px';
+    boxEl.style.height = height + 'px'
+
+    listBoxes.push(boxEl);
   }
+
   const divBoxesEl = document.querySelector('#boxes');
   divBoxesEl.append(...listBoxes);
 }

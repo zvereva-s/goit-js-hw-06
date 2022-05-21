@@ -8,6 +8,7 @@ const ingredients = [
 ];
 
 //! решение "№1"//
+
 // function makeListItem(arr) {
 //   const ulEl = document.querySelector('#ingredients');
 
@@ -20,6 +21,7 @@ const ingredients = [
 
 
 //! решение №2//
+
 function makeListItem(arr) {
   const list = (arr.map(el => {
     const listItemTag = document.createElement('li');
@@ -32,4 +34,4 @@ const ulEl = document.querySelector('#ingredients');
 ulEl.append(...list);
 }
 
-
+makeListItem(ingredients);
