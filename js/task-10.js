@@ -15,12 +15,11 @@ inputEl.addEventListener('input', (event) => {
   event.preventDefault();
 
   btnCreate.addEventListener('click', (event) => {
+    event.preventDefault();
     createBoxes(number);
   });
 });
-
   btnDestroy.addEventListener('click', destroyBoxes);
-  
 }
 
 function createBoxes(amount) {
