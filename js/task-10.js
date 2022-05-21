@@ -2,6 +2,7 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
+
 function makingColorBoxes() {
 const inputEl = document.querySelector('input');
 const btnCreate = document.querySelector('[data-create]');
@@ -9,13 +10,12 @@ const btnDestroy = document.querySelector('[data-destroy]');
 
 let number = 0;
 
+
 inputEl.addEventListener('input', (event) => {
 
-  number = event.currentTarget.value;
-  event.preventDefault();
+  number = Number(event.currentTarget.value);
 
-  btnCreate.addEventListener('click', (event) => {
-    event.preventDefault();
+  btnCreate.addEventListener('click', () => {
     createBoxes(number);
   });
 });
@@ -52,8 +52,11 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
+ 
   const boxesEl = document.querySelectorAll('.color-box');
   boxesEl.forEach(el => el.remove());
+
+  location.reload();
 }
 
 makingColorBoxes();
