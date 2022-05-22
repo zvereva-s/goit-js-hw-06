@@ -13,42 +13,40 @@ const btnCreate = document.querySelector('[data-create]');
   
 
 
-inputEl.addEventListener('input', (event) => {
-
-  const num = Number(inputEl.value);
- 
+inputEl.addEventListener('input', (event) => { 
   btnCreate.addEventListener('click', () => {
-  
+  const num = Number(inputEl.value);
   createBoxes(num);
 
   });
 });
-  btnDestroy.addEventListener('click', destroyBoxes);
+btnDestroy.addEventListener('click', destroyBoxes);
 }
 
-function createBoxes(amount) {
+function createBoxes(amount) { 
   const listBoxes = [];
 
-  let width = 30;
-  let height = 30;
+  let width = 20;
+  let height = 20;
 
-  // for (let i = 0; i < amount; i += 1){
-  //   listBoxes.push(`<div class="color-box" style="background-color:${getRandomHexColor()}; width: ${width += 10}px ; height:${height += 10}px;"></div>`);
-  // }
-  // const divBoxesEl = document.querySelector('#boxes');
-  // divBoxesEl.insertAdjacentHTML('beforeend',listBoxes.join('\n'));
+  if (divBoxesEl.lastElementChild) {
+    console.log(divBoxesEl.lastElementChild);
+    width = parseInt(divBoxesEl.lastElementChild.style.width);
+    height = parseInt(divBoxesEl.lastElementChild.style.height);
+  }
+
 
   for (let i = 0; i < amount; i += 1) {
     const boxEl = document.createElement('div');
     boxEl.classList.add('color-box');
     boxEl.style.backgroundColor = getRandomHexColor();
 
+    width += 10;
+    height += 10;
 
     boxEl.style.width = width + 'px';
     boxEl.style.height = height + 'px';
 
-    width += 10;
-    height += 10;
 
     listBoxes.push(boxEl);
   }
@@ -66,3 +64,17 @@ function destroyBoxes() {
 }
 
 makingColorBoxes();
+
+
+
+
+
+
+
+//! another solution for createBox()
+//**  
+  // for (let i = 0; i < amount; i += 1){
+  //   listBoxes.push(`<div class="color-box" style="background-color:${getRandomHexColor()}; width: ${width += 10}px ; height:${height += 10}px;"></div>`);
+  // }
+  // const divBoxesEl = document.querySelector('#boxes');
+  // divBoxesEl.insertAdjacentHTML('beforeend',listBoxes.join('\n')); */
