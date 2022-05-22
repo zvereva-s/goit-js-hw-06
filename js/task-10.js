@@ -66,4 +66,3 @@ function destroyBoxes() {
 }
 
 makingColorBoxes();
-// createBoxes(9);
