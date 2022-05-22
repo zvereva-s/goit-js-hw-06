@@ -9,7 +9,7 @@ const divBoxesEl = document.querySelector('#boxes');
 function makingColorBoxes() {
 
 const btnCreate = document.querySelector('[data-create]');
-  const btnDestroy = document.querySelector('[data-destroy]');
+const btnDestroy = document.querySelector('[data-destroy]');
   
 
 
@@ -34,7 +34,6 @@ function createBoxes(amount) {
     width = parseInt(divBoxesEl.lastElementChild.style.width);
     height = parseInt(divBoxesEl.lastElementChild.style.height);
   }
-
 
   for (let i = 0; i < amount; i += 1) {
     const boxEl = document.createElement('div');
