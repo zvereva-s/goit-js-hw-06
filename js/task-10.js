@@ -30,7 +30,7 @@ function createBoxes(amount) {
   let height = 20;
 
   if (divBoxesEl.lastElementChild) {
-    console.log(divBoxesEl.lastElementChild);
+  
     width = parseInt(divBoxesEl.lastElementChild.style.width);
     height = parseInt(divBoxesEl.lastElementChild.style.height);
   }
