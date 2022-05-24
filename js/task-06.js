@@ -1,8 +1,12 @@
 
 const formImputEL = document.querySelector('#validation-input');
 
+
+
+
+
 formImputEL.addEventListener('blur', (event) => {
-    if (formImputEL.value.length > formImputEL.getAttribute('data-length')) {
+    if (formImputEL.value.length === formImputEL.getAttribute('data-length')) {
         formImputEL.classList.remove('valid');
         formImputEL.classList.add('invalid');
     } else {

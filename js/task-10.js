@@ -11,15 +11,12 @@ function makingColorBoxes() {
 const btnCreate = document.querySelector('[data-create]');
 const btnDestroy = document.querySelector('[data-destroy]');
   
-
-
-inputEl.addEventListener('input', (event) => { 
   btnCreate.addEventListener('click', () => {
-  const num = Number(inputEl.value);
-  createBoxes(num);
 
+    createBoxes(Number(inputEl.value));
   });
-});
+
+  
 btnDestroy.addEventListener('click', destroyBoxes);
 }
 
